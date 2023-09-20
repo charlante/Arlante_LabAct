@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Student;
+
+<h1>Create a new student</h1>
+
+<form asp-action="AddStudent" asp-controller="Student" method="post">
+    <div class="form-group">
+        <label asp-for="Id" hidden>ID</label>
+        <input asp-for="Id" class="form-control" hidden />
+    </div>
+    <div class="form-group">
+        <label asp-for="FirstName">FirstName</label>
+        <input asp-for="FirstName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName">LastName</label>
+        <input asp-for="LastName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="GPA">GPA</label>
+        <input asp-for="GPA" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Course">Course</label>
+        <select asp-for="Course" asp-items="@Html.GetEnumSelectList(typeof(Course))" class="form-control"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="AdmissionDate">Date Enrolled</label>
+        <input asp-for="AdmissionDate" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>

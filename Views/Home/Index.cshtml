@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+    var txt = "";
+    if (DateTime.Now.Hour > 12)
+    { txt = "Good Evening"; }
+    else
+    { txt = "Good Morning"; }
+    DayOfWeek wk = DateTime.Today.DayOfWeek;
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to my page!</h1>
+
+    <p>@txt, today is @wk, @DateTime.Now.Day, @DateTime.Now.ToString("MMMM").</p>
+</div>

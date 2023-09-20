@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Instructor>;
+
+<div>Instructor List</div>
+
+
+<table class="table table-dark">
+
+    <tr>
+        <th colspan="7">Instructor</th>
+    </tr>
+
+    <tr>
+        <td>Name</td>
+        <td>Status</td>
+        <td>Rank</td>
+        <td>Hiring Date</td>
+        <td>Details</td>
+        <td>Update</td>
+    </tr>
+
+    @foreach (var instructor in Model)
+    {
+        <tr>
+            <td>@instructor.FirstName @instructor.LastName</td>
+            <td>@instructor.IsTenured</td>
+            <td>@instructor.Rank</td>
+            <td>@instructor.HiringDate</td>
+            <td><a asp-action="ShowDetail" asp-route-id="@instructor.Id" class="btn btn-primary">Show Details</a></td>
+            <td><a asp-action="UpdateInstructor" asp-route-id="@instructor.Id" class="btn btn-primary">Update</a></td>
+        </tr>
+    }
+</table>
+<a class="btn btn-primary" asp-action="AddInstructor">Add Instructor</a>
